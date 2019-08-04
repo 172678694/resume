@@ -4,8 +4,9 @@
         view: null,
         swiper: null,
         init:function (view) {
-            this.view = view
-            this.initSwiper()
+            this.view = view //填充controller对象的view,
+                             //如果不填充initSwiper访问不到controller.init(view)传进来的view
+            this.initSwiper() 
         },
         swiperOptions: {
             loop: true,
@@ -18,10 +19,7 @@
             },
         },
         initSwiper: function () {
-            this.swiper = new Swiper(
-                this.view.querySelector('.swiper-container'),
-                this.swiperOptions
-            )
+            this.swiper = new Swiper(this.view.querySelector('.swiper-container'),this.swiperOptions)
         }
     }
     controller.init(view)

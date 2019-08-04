@@ -1,8 +1,8 @@
 window.Controller=function(options){
     var init=options.init
     object = {
-        view: null,
-        model:null,
+        "view": null,
+        "model":null,
         init: function (view,model) {
             this.view = view 
             this.model = model
