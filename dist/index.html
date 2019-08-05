@@ -6,17 +6,22 @@
     <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="./loading.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.6/css/swiper.min.css">
-
     <script src="//at.alicdn.com/t/font_648630_kx5u0k8pos4kuik9.js"></script>
+    <script src="//at.alicdn.com/t/font_978333_xa82zwq8svn.js"></script>
+    <style>
+
+    </style>
+    <script>
+        
+    </script>
 </head>
 
 <body bgcolor="red">
-
     <div id="topNavBar" class="topNavBar ">
         <div class="topNavBar-inner clearfix">
             <a class="logo" href="#" alt="logo">
-                <span class="rs">RS</span>
-                <span class="card">card</span>
+                <span class="dy">DY</span>
+                <span class="card">Card</span>
             </a>
             <nav class="menu">
                 <ul class="clearfix">
@@ -65,7 +70,7 @@
                     <img src="./img/avatar.jpg" width=299 height=347 alt="头像">
                 </div>
                 <div class="text">
-                    <span class="welcome">Hello
+                    <span class="welcome">你好，我是一名前端工程师
                         <span class="triangle"></span>
                     </span>
                     <h1>杨琪匀</h1>
@@ -101,7 +106,7 @@
                 </a>
                 <a href="#">
                     <svg class="icon" aria-hidden="true">
-                        <use xlink:href="#icon-twitter"></use>
+                        <use xlink:href="#icon-jianshu"></use>
                     </svg>
                 </a>
                 <a href="#">
@@ -161,24 +166,78 @@
     </section>
     <section data-x id="siteWork" class="portfolio">
         <h2>作品集</h2>
-
-        <!--这就是 view，用户看得见的东西-->
-        <!--mySlides这个div，就是init-swiper的view-->
-        <!-- Slider main container -->
-        <div id="mySlides">
-            <div class="swiper-container">
-                <!-- Additional required wrapper -->
-                <div class="swiper-wrapper">
-                    <!-- Slides -->
-                    <img class="swiper-slide" src="./img/works/nav-page.jpg">
-                    <img class="swiper-slide" src="./img/works/canvas.jpg">
-                    <img class="swiper-slide" src="./img/works/apple-style-slide.jpg">
+        <div class="works"  id="mySlides" >
+            <div class="big" style="position: relative;">
+                <img class="bigOne" src="./img/works/works1.jpg" alt="work1" style="height:608px; vertical-align: bottom;" >
+                <div class="content" style="position: absolute;bottom:-60px;left:20px;">
+                    <h2 style="margin-bottom:10px;color:white;">Vue.js在线简历编辑器</h2>
+                    <p style="color:#B6D5F1;margin-bottom:20px;text-align:left;">关键字：VUE</p>
+                    <div class="tools" style="display:flex;margin-bottom:10px;">
+                        <div class="tool tool1" style="border:1px solid #B6D5F1;border-radius:5px; margin-right: 20px;">
+                            <a href="#" >
+                                <svg class="icon" aria-hidden="true"  style="fill:#E6686A;width:30px;height:30px;padding:5px;">
+                                    <use xlink:href="#icon-eye"></use>
+                                </svg>
+                            </a>
+                        </div>
+                        <div class="tool tool2" style="border:1px solid #B6D5F1;border-radius:5px;">
+                            <a href="#">
+                                <svg class="icon" aria-hidden="true" style="fill:#E6686A;width:30px;height:30px;padding:5px;">
+                                    <use xlink:href="#icon-link"></use>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
                 </div>
-                <!-- If we need pagination -->
-                <div class="swiper-pagination"></div>
             </div>
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
+            <div class="small" >
+                <div class="smallOne smallOne-1" >
+                    <img class="" src="./img/works/works2.jpg" alt="work2" >
+                    <div class="content" >
+                        <h5>原生CSS实现皮卡丘</h2>
+                        <h6>关键字：CSS、Animation</h6>
+                        <div class="tools" >
+                            <div class="tool tool1" >
+                                <a href="#" >
+                                    <svg class="icon" aria-hidden="true">
+                                        <use xlink:href="#icon-eye"></use>
+                                    </svg>
+                                </a>
+                            </div>
+                            <div class="tool tool2" >
+                                <a href="#">
+                                    <svg class="icon" aria-hidden="true">
+                                        <use xlink:href="#icon-link"></use>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="smallOne smallOne-2">
+                    <img class="" src= "./img/works/works3.jpg" alt="work3" >
+                    <div class="content">
+                        <h5>仿网易云音乐</h5>
+                        <h6>原生JS、MVC</h6>
+                        <div class="tools" >
+                            <div class="tool tool1" >
+                                <a href="#" >
+                                    <svg class="icon" aria-hidden="true">
+                                        <use xlink:href="#icon-eye"></use>
+                                    </svg>
+                                </a>
+                            </div>
+                            <div class="tool tool2" >
+                                <a href="#">
+                                    <svg class="icon" aria-hidden="true">
+                                        <use xlink:href="#icon-link"></use>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
     </section>
@@ -200,12 +259,36 @@
     <script src="./js/base/View.js"></script>
     <script src="./js/base/Model.js"></script>
     <script src="./js/base/Controller.js"></script>
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://unpkg.com/scrollreveal"></script>
     <!-- 模块化 -->
     <script src="./js/init-swiper.js"></script>
     <script src="./js/auto-slide-up-and-highlight.js"></script>
     <script src="./js/sticky-topbar.js"></script>
     <script src="./js/smooth-navigation.js"></script>
     <script src="./js/message.js"></script>
+    <script>
+        $('.big').on('mouseenter',()=>{
+            $('.big').addClass('active')
+        })
+        $('.big').on('mouseleave',()=>{
+            $('.big').removeClass('active')
+           
+        })
+        $('.smallOne-1').on('mouseenter',()=>{
+            $('.smallOne-1').addClass('active')
+        })
+        $('.smallOne-1').on('mouseleave',()=>{
+            $('.smallOne-1').removeClass('active')
+        })
+        $('.smallOne-2').on('mouseenter',()=>{
+            $('.smallOne-2').addClass('active')
+        })
+        $('.smallOne-2').on('mouseleave',()=>{
+            $('.smallOne-2').removeClass('active')
+        })
+       
+    </script>
 </body>
 
 </html>

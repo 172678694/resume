@@ -10,7 +10,7 @@
         findClosest();
     });
 
-    //当鼠标进入onmouseenter导航栏每个li标签时出现下划线
+    //当鼠标进入时给li增加类
     let liTags = document.querySelectorAll('nav.menu>ul>li');
     for (let i = 0; i < liTags.length; i++) {
         liTags[i].onmouseenter = function (x) {
