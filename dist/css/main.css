@@ -41,7 +41,8 @@ h1, h2, h3, h4, h5, h6 {
   height: 1em;
   vertical-align: -0.15em;
   fill: currentColor;
-  overflow: hidden; }
+  overflow: hidden; 
+}
 
 .topNavBar {
   position: fixed;
@@ -50,36 +51,54 @@ h1, h2, h3, h4, h5, h6 {
   width: 100%;
   padding: 20px 0px;
   transition: all 0.5s;
-  color: rgba(255, 255, 255, 0.7); }
-  .topNavBar nav {
-    padding-top: 7px;
-    padding-bottom: 1px; 
-    float:right;}
-    .topNavBar nav > ul {
-      list-style: none;
-      margin: 0;
-      padding: 0; }
-      .topNavBar nav > ul > li {
-        float: left;
-        margin-left: 17px;
-        margin-right: 17px;
-        position: relative; }
-        .topNavBar nav > ul > li > a {
-          font-size: 12px;
-          color: inherit;
-          text-decoration: none;
-          font-weight: bold;
-          border-top: 3px solid transparent;
-          border-bottom: 3px solid transparent;
-          padding-top: 5px;
-          padding-bottom: 5px;
-          display: block;
-          position: relative; }
-
-.topNavBar-inner {
-  margin: 0 16px; 
-
+  color: rgba(255, 255, 255, 0.7); 
 }
+.topNavBar>.topNavBar-inner {
+  margin: 0 16px; 
+}
+.topNavBar>.topNavBar-inner>a.logo {
+  float: left;
+  font-size: 24px;
+  font-family: 'Arial Black';
+  padding-top: 3px;
+  padding-bottom: 4px;
+  margin-left: 30px; 
+}
+.topNavBar>.topNavBar-inner>nav {
+  padding-top: 7px;
+  padding-bottom: 1px; 
+  float:right;
+  font-size: 12px;
+}
+.topNavBar>.topNavBar-inner>nav > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0; 
+}
+.topNavBar>.topNavBar-inner>nav > ul > li {
+  float: left;
+  margin-left: 17px;
+  margin-right: 17px;
+  position: relative; 
+}
+.topNavBar>.topNavBar-inner>nav > ul > li > a {
+  
+  color: inherit;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 8px 0;
+  display: block;
+  position: relative; 
+}
+
+.topNavBar>.topNavBar-inner>a.logo>.dy {
+  color: #E6686A; 
+}
+
+.topNavBar>.topNavBar-inner>a.logo>.card {
+  color: #9A9DA2; 
+}
+
 
 .topNavBar.sticky {
   background-color: white;
@@ -99,53 +118,56 @@ h1, h2, h3, h4, h5, h6 {
   width: 100%;
   background: #E6686A;
   height: 2px;
-  animation: menuSlide 0.3s; }
+  animation: menuSlide 0.3s; 
+}
 
 @keyframes menuSlide {
   0% {
     width: 0; }
   100% {
     width: 100%; } }
+    
 
+/* 改：副菜单栏样式 */
 .topNavBar li > .submenu {
   display: none;
   position: absolute;
   right: 0;
   top: 100%;
-  background: white;
-  padding: 5px 10px;
-  color: #3d4451;
-  animation: submenuSlide 0.3s; }
+  background: rgba(255, 255, 255, 0.5);
+  color: black;
+  animation: submenuSlide 0.5s; 
+}
+.topNavBar li > .submenu>li{
+  text-align: right;
+  padding:5px 10px;
+}
+
+.topNavBar li > .submenu>li>a{
+  border-bottom:2px solid transparent;
+  transition: all 0.3s;
+  line-height: 20px;
+}
+.topNavBar li > .submenu>li.active>a{
+  border-bottom:2px solid  #E6686A;
+}
 
 .topNavBar li.active > .submenu {
-  display: block; }
+  display: block; 
+}
 
 @keyframes submenuSlide {
   0% {
     margin-right: -100%;
-    /*li的百分百*/ }
+    /*li的百分比*/ }
   100% {
     margin-right: 0; } }
 
 .topNavBar .submenu > li {
   white-space: nowrap; }
 
-.topNavBar a.logo {
-  float: left;
-  font-size: 24px;
-  font-family: 'Arial Black';
-  padding-top: 3px;
-  padding-bottom: 4px;
-margin-left: 30px; }
-
-.topNavBar a.logo>.dy {
-  color: #E6686A; }
-
-.topNavBar a.logo>.card {
-  color: #9A9DA2; }
-
 .banner {
-  background-image: url(./img/rs-cover-1);
+  background-image: url(../img/rs-cover-1.jpg);
   height: 515px;
   background-size: cover; }
 
@@ -222,7 +244,9 @@ margin-left: 30px; }
   height: 30px;
   padding: 5px 0;
   display: inline-block;
-  margin: 16px; }
+  margin: 16px; 
+  transition: all 0.3s;
+}
 
 .userCard > footer.media > a:hover {
   background-color: #cf505f; }
@@ -241,7 +265,7 @@ body > main {
 
 .downloadResume-wrapper>.downloadResume {
   border: 1px solid #cbcdcf;
-  font-size: 14px;
+  font-size: 16px;
   padding: 21px 55px;
   display: inline-block;
   /*如果不写，上下padding不起作用*/
@@ -249,7 +273,7 @@ body > main {
   /*圆角*/
   color: #3d4451;
   font-weight: bold;
-  margin: 30px;
+  margin: 60px 0 20px;
   transition: box-shadow 0.7s;
   /*过渡效果，使变化不突兀.css box-shadow generator*/ }
 
@@ -265,12 +289,19 @@ body > main {
   line-height: 1.8; }
 
 body > section.skills,
-body > section.portfolio {
+body > section.portfolio,
+body > section.experience,
+body > section.others {
   max-width: 940px;
   margin-left: auto;
   margin-right: auto; }
 
-body > section.skills > h2, body > section.portfolio > h2, body > section.message > h2 {
+body > section.skills > h2,
+ body > section.portfolio > h2,
+  body > section.message > h2,
+  body > section.experience > h2,
+  body > section.others > h2,
+  body > section.contact > h2{
   color: #3d4451;
   font-size: 34px;
   line-height: 1.2;
@@ -320,101 +351,198 @@ section.portfolio {
 
 section.portfolio {
   text-align: center;
-  margin-bottom: 100px;
   max-width: 720px; }
 
 /* section.portfolio .swiper-container {
   width: 668px;
   height: 501px; } */
+/*----------------------portfoilio-Nav-----------------------*/
 
-section.portfolio .swiper-button-prev {
-  background-color: white;
-  height: 64px;
-  width: 64px;
-  border-radius: 50%;
-  left: auto;
-  right: 90%; }
+  .portfolio>.nav .portfolioBar-inner{
+    transition: all 0.2s;
+}
+.portfolio>.nav>.selectBar.state-1>.portfolioBar-inner{
+    width:34px;
+    margin-left: 0;
+}
+.portfolio>.nav>.selectBar.state-2>.portfolioBar-inner{
+    width:96px;
+    margin-left: 96px;
+}
+.portfolio>.nav>.selectBar.state-3>.portfolioBar-inner{
+    width:32px;
+    margin-left: 250px;
+}
 
-section.portfolio .swiper-button-next {
-  background-color: white;
-  height: 64px;
-  width: 64px;
-  border-radius: 50%;
-  left: 90%;
-  right: auto; }
+/*----------------------portfoilio-AllWorks-----------------------*/
 
-.works{
+.worksAll{
     display: flex;
     justify-content: space-between;
 }
-.works>.small>.smallOne> img{
+.worksAll>.big{
+  position: relative;
+  width:63%;overflow:hidden;box-shadow: 0px 0px 8px 2px rgba(0,0,0,0.2); 
+  transition:all 0.2s;
+}
+
+
+.worksAll>.big>.bigOne{
+  height:608px; vertical-align: bottom;
+  filter: blur(1px) brightness(0.7);
+  cursor: pointer;
+  transition:all 1.5s;
+}
+.worksAll>.big>.content{
+  position: absolute;bottom:-60px;left:20px;
+  transition:all 0.8s;
+}
+.worksAll>.big>.content>h2{
+  margin-bottom:10px;color:white;
+}
+.worksAll>.big>.content>p{
+  color:#B6D5F1;margin-bottom:20px;text-align:left;
+}
+.worksAll>.big>.content>.tools{
+  display:flex;margin-bottom:10px;
+}
+.worksAll>.big>.content>.tools>.tool{
+  border:1px solid #B6D5F1;border-radius:5px;
+}
+.worksAll>.big>.content>.tools>.tool1{
+  margin-right: 20px;
+}
+.worksAll>.big>.content>.tools>.tool svg{
+  fill:#E6686A;width:30px;height:30px;padding:5px;
+}
+.worksAll>.small{
+  display:flex;flex-direction:column;justify-content:space-between;
+}
+.worksAll>.small>.smallOne{
+  box-shadow: 0px 0px 8px 2px rgba(0,0,0,0.2); width:290px;height:290px;overflow:hidden; cursor: pointer;
+  position:relative;
+  transition: all 0.2s;
+}
+.worksAll>.small>.smallOne> img{
     vertical-align: bottom;height:290px;
     filter: blur(1px) brightness(0.7);
     cursor: pointer;
     transition:all 1.5s;
 }
-.works>.small>.smallOne>.content{
+.worksAll>.small>.smallOne>.content{
     transition: all 0.8s;
-}
-.works>.small>.smallOne{
-    box-shadow: 0px 0px 8px 2px rgba(0,0,0,0.2); width:290px;height:290px;overflow:hidden; cursor: pointer;
-    position:relative;
-    transition: all 0.2s;
-}
-.works>.small>.smallOne.active>img{
-    transform: scale(1.2);
-}
-.works>.small>.smallOne.active{
-    box-shadow: 0px 0px 12px 3px rgba(0,0,0,0.4); 
-}
-.works>.small>.smallOne.active>.content{
-    transform: translateY(-40px);
-}
-.works>.small{
-    display:flex;flex-direction:column;justify-content:space-between;
-}
-
-.works>.big{
-    width:63%;overflow:hidden;box-shadow: 0px 0px 8px 2px rgba(0,0,0,0.2); 
-    transition:all 0.2s;
-}
-
-.works>.big>.bigOne{
-    filter: blur(1px) brightness(0.7);
-    cursor: pointer;
-    transition:all 1.5s;
-}
-.works>.big.active{
-    box-shadow: 0px 0px 12px 2px rgba(0,0,0,0.4); 
-}
-.works>.big.active>.bigOne{
-    transform: scale(1.2);
-}
-.works>.big>.content{
-    transition:all 0.8s;
-}
-.works>.big.active>.content{
-    transform: translateY(-60px);
-}
-.smallOne>.content{
     position: absolute;bottom:-40px;left:20px;
 }
-.smallOne>.content>h5{
-    margin-bottom:10px;color:white;text-align:left;
+.worksAll>.small>.smallOne>.content>h5{
+  margin-bottom:10px;color:white;text-align:left;
 }
-.smallOne>.content>h6{
-   color:#B6D5F1;margin-bottom:12px;text-align:left;
+.worksAll>.small>.smallOne>.content>h6{
+ color:#B6D5F1;margin-bottom:12px;text-align:left;
 }
-.smallOne>.content>.tools{
-    display:flex;margin-bottom:10px;
+.worksAll>.small>.smallOne>.content>.tools{
+  display:flex;margin-bottom:10px;
 }
-.smallOne>.content>.tools>.tool{
-    border:1px solid #B6D5F1;border-radius:3px; margin-right: 20px;
+.worksAll>.small>.smallOne>.content>.tools>.tool{
+  border:1px solid #B6D5F1;border-radius:3px; margin-right: 20px;
 }
-.smallOne>.content>.tools>.tool svg{
-    fill:#E6686A;width:20px;height:20px;padding:3px;
+.worksAll>.small>.smallOne>.content>.tools>.tool svg{
+  fill:#E6686A;width:20px;height:20px;padding:3px;
+}
+.worksAll>.small>.smallOne.active{
+  box-shadow: 0px 0px 12px 3px rgba(0,0,0,0.4); 
+}
+.worksAll>.small>.smallOne.active>img{
+    transform: scale(1.2);
+}
+.worksAll>.small>.smallOne.active>.content{
+    transform: translateY(-40px);
+}
+.worksAll>.big.active{
+  box-shadow: 0px 0px 12px 2px rgba(0,0,0,0.4); 
+}
+.worksAll>.big.active>.bigOne{
+  transform: scale(1.2);
 }
 
+.worksAll>.big.active>.content{
+  transform: translateY(-60px);
+}
+
+
+
+
+
+/*----------------------portfoilio-JSAndFrame-----------------------*/
+
+.worksJS{
+  display:none;flex-wrap:wrap;justify-content:space-between;
+}
+.worksJS>.JSWorkFrame{
+  width:400px;height:150px;display:flex;border-radius:20px;background:white;margin: 0 0 35px;align-items: center;
+  animation: breathe 1s infinite linear alternate-reverse;
+}
+.worksJS>.JSWorkFrame>.image{
+  background-size:cover;width:160px;height:150px;border-radius:0 20px 20px 0;
+}
+.worksJS>.JSWorkFrame>.content{
+  flex-grow:1;
+}
+.worksJS>.JSWorkFrame>.content>h4{
+  color:black;margin:30px 12px 10px;text-align:left;font-weight:bold;
+}
+.worksJS>.JSWorkFrame>.content>h5{
+  color:#8F948E;margin:12px ;text-align:left;
+}
+.worksJS>.JSWorkFrame>.content>a{
+  margin:25px 12px;width:90px;line-height:25px;color:white;padding:5px 0 ;display:block;
+  border-radius:20px;/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#75cbf0+0,68a1ed+50,5c7deb+100 */
+  background: #75cbf0; /* Old browsers */
+  background: -moz-linear-gradient(top,  #75cbf0 0%, #68a1ed 50%, #5c7deb 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top,  #75cbf0 0%,#68a1ed 50%,#5c7deb 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom,  #75cbf0 0%,#68a1ed 50%,#5c7deb 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#75cbf0', endColorstr='#5c7deb',GradientType=0 ); /* IE6-9 */
+}
+.worksJS>.JSWorkFrame.active{
+  transform: scale(1.05)
+}
+@keyframes breathe {
+  from {  box-shadow: 0 1px 6px rgba(0,0,0,0.24) }
+  to   { box-shadow:  0 10px 25px rgba(0,0,0,0.4) }
+}
+/*----------------------portfoilio-CSS-----------------------*/
+
+.worksCSS{
+  display:none;justify-content:space-between;margin-top:30px;
+}
+.worksCSS>.CSSworkFrame{
+  background:white;box-shadow: 0 1px 6px rgba(0, 0, 0, 0.24);
+  transition: all 0.8s;
+}
+.worksCSS>.CSSworkFrame>.pic{
+  overflow: hidden;
+  width:450px;
+}
+.worksCSS>.CSSworkFrame img{
+  width:450px;
+  transition: all 0.8s;
+  vertical-align: bottom;
+  
+}
+.worksCSS>.CSSworkFrame>h5{
+  margin-top:20px;color:#8F948E;
+}
+.worksCSS>.CSSworkFrame>h2{
+  margin-top:20px;font-weight:bold;
+}
+.worksCSS>.CSSworkFrame>.author{
+  margin-top:20px;margin-bottom:20px;color:#8F948E;
+}
+.worksCSS>.CSSworkFrame.active{
+  box-shadow: 0px 4px 13px rgba(0,0,0,0.4);}
+
+.worksCSS>.CSSworkFrame.active img{
+  transform: scale(1.2)
+}
 /* message */
 section.message > ol {
   max-width: 700px;
@@ -424,3 +552,132 @@ section.message > ol {
 section.message > ol > li {
   border-bottom: 1px solid #DDD;
   padding: 16px; }
+
+ /* section.experience */
+ section.experience>.works{
+   position: relative;
+   height:500px;
+   text-align: center;
+ }
+ section.experience>.works>.work{
+   width:43%;
+   height: 200px;
+   position: absolute;
+   border-top:5px solid #E6686A;
+   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+   display: flex;
+   flex-direction: column;
+   justify-content: space-around;
+   color: #9da0a7;
+   padding: 10px;
+ }
+ section.experience>.works>.work1{
+   top:0;left:0
+ }
+ section.experience>.works>.work2{
+  top:40px;right:0
+}
+section.experience>.works>.work3{
+  bottom:0;left:0
+}
+section.experience>.works>.timeline{
+  position: absolute;
+  height: 280px;
+  width: 5px;
+  background-color: #E6686A;
+  opacity: 0.2;
+  top:70px;
+  left: 50%;
+}
+section.experience>.works>.work>.triangle{
+  position: absolute;
+  top:50px;
+  right:-40px;
+    width:0;
+    height:0;
+    border-left:20px solid #ddd;
+    border-right:20px solid transparent;
+    border-top:20px solid transparent;
+    border-bottom:20px solid transparent;
+}
+section.experience>.works>.work>.dot{
+  width:8px;
+  height: 8px;
+  border-radius: 4px;
+  background-color: #E6686A;
+  position: absolute;
+  top:66px;
+  right:-52px;
+}
+section.experience>.works>.work>.date{
+  color:#E6686A;
+  font-weight: bold;
+
+}
+section.experience>.works>.work>span{
+  text-align:justify;color:#9da0a7;
+}
+section.experience>.works>.work2>.triangle{
+  left: -40px;
+  border-left:20px solid transparent;
+  border-right:20px solid #ddd;
+}
+section.experience>.works>.work2>.dot{
+  left:-46px;
+}
+
+section.others>.other{
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+  margin-bottom: 10px;
+}
+section.others>.other>.title{
+  padding: 10px 20px;
+  background-color: #E6686A;
+  color:white;
+  cursor: pointer;
+  font-weight: bold;
+}
+section.others>.other>.content{
+  display: none;
+  padding: 20px;
+  background: white;
+  
+}
+section.others>.other.active>.content{
+  display: block;
+}
+
+section.contact>.contactCard{
+  width:400px;
+  height: 400px;
+  margin:auto;
+  padding: 50px;
+  animation: breathe 1s infinite linear alternate-reverse;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+section.contact>.contactCard .piece{
+  display:flex;
+  padding: 10px 0;
+}
+section.contact>.contactCard>.more{
+  display: flex;
+  padding:100px 0 60px;
+  justify-content: center;
+  font-size: 18px;
+}
+section.contact>.contactCard .piece>strong{
+  display: block;
+  width:90px;
+  padding: 0 20px;
+}
+section.contact>.contactCard>.list{
+  display: flex;
+  margin-bottom: 20px;
+}
+section.contact>.contactCard>.list .icon{
+  width:40px;
+  height:40px;
+  margin:0 20px;
+}

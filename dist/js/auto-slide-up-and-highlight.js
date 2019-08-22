@@ -2,7 +2,7 @@
     //添加offset类,制造从下往上浮现的效果
     let specialTags = document.querySelectorAll('[data-x]');
     for (let i = 0; i < specialTags.length; i++) {
-        specialTags[i].classList.add('offset');
+        specialTags[i].classList.add('offset')
     }
     findClosest();
 
@@ -11,19 +11,32 @@
     });
 
     //当鼠标进入时给li增加类
-    let liTags = document.querySelectorAll('nav.menu>ul>li');
+    let liTags = document.querySelectorAll('nav.menu>ul>li')
     for (let i = 0; i < liTags.length; i++) {
         liTags[i].onmouseenter = function (x) {
-            let li = x.currentTarget.classList.add('active');
+            let li = x.currentTarget.classList.add('active')
+            console.log(x.currentTarget.classList)
         };
         liTags[i].onmouseleave = function (x) {
-            let li = x.currentTarget.classList.remove('active');
+            let li = x.currentTarget.classList.remove('active')
         };
     }
-
+    // jq:利用冒泡，不必去给每一个元素绑定事件，只需要给父元素绑定事件。
+    // $('nav.menu>ul>li>.submenu').on('click','li',(e)=>{
+    //     e.currentTarget.addClass('active')
+    // })
+    let subliTags = document.querySelectorAll('nav.menu>ul>li>.submenu>li')
+    for (let i = 0; i < subliTags.length; i++) {
+        subliTags[i].onmouseenter = function (x) {
+            let li = x.currentTarget.classList.add('active')
+        };
+        subliTags[i].onmouseleave = function (x) {
+            let li = x.currentTarget.classList.remove('active')
+        };
+    }
     //helper
     function findClosest() {
-        let specialTags = document.querySelectorAll('[data-x]');
+        let specialTags = document.querySelectorAll('[data-x]')
         let minIndex = 0;
         //offsetTop 元素距离文档顶部的像素
         for (let i = 1; i < specialTags.length; i++) {

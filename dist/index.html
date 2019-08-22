@@ -7,13 +7,11 @@
     <link rel="stylesheet" href="./loading.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.6/css/swiper.min.css">
     <script src="//at.alicdn.com/t/font_648630_kx5u0k8pos4kuik9.js"></script>
-    <script src="//at.alicdn.com/t/font_978333_xa82zwq8svn.js"></script>
+    <script src="//at.alicdn.com/t/font_978333_2715v60ilbaj.js"></script>
+    
     <style>
 
     </style>
-    <script>
-        
-    </script>
 </head>
 
 <body bgcolor="red">
@@ -32,29 +30,24 @@
                         <a href="#siteSkill">技能</a>
                     </li>
                     <li>
-                        <a href="#siteWork">作品</a>
+                        <a href="#siteWork">作品集</a>
                         <ul class="submenu">
-                            <li>作品1</li>
-                            <li>作品2</li>
-                            <li>作品3</li>
+                            <li><a href="#siteWork">所有</a></li>
+                            <li><a href="#siteWork">框架&原生JS</a></li>
+                            <li><a href="#siteWork">CSS</a></li>
                         </ul>
                     </li>
                     <li>
-                        <a href="#">博客</a>
-                        <ul class="submenu">
-                            <li>博客1</li>
-                            <li>博客2</li>
-                            <li>博客3</li>
-                        </ul>
+                        <a href="#siteExperience">工作经历</a>
                     </li>
                     <li>
-                        <a href="#">日历</a>
+                        <a href="#siteContact">联系方式</a>
                     </li>
                     <li>
-                        <a href="#">联系方式</a>
+                        <a href="#siteOthers">其他</a>
                     </li>
                     <li>
-                        <a href="#">其他</a>
+                        <a href="#siteMessage">留言</a>
                     </li>
                 </ul>
             </nav>
@@ -70,7 +63,7 @@
                     <img src="./img/avatar.jpg" width=299 height=347 alt="头像">
                 </div>
                 <div class="text">
-                    <span class="welcome">你好，我是一名前端工程师
+                    <span class="welcome">你好，我是一名前端er~
                         <span class="triangle"></span>
                     </span>
                     <h1>杨琪匀</h1>
@@ -119,9 +112,7 @@
         <p class="downloadResume-wrapper">
             <a class="downloadResume" href="./resume.pdf" target="_blank" download>下载我的简历</a>
         </p>
-        <p class="selfIntroduction">杨琪匀，前端开发工程师,目标就职于xx；
-            <br>技能：前端开发，node.js开发
-        </p>
+
     </main>
     <section data-x id='siteSkill' class="skills">
         <h2>技能</h2>
@@ -129,19 +120,19 @@
             <li>
                 <h3>HTML 5 &amp;CSS 3</h3>
                 <div class="progressBar">
-                    <div class="progress" style="width:20%;"></div>
+                    <div class="progress" style="width:80%;"></div>
                 </div>
             </li>
             <li>
                 <h3>JavaSript</h3>
                 <div class="progressBar">
-                    <div class="progress" style="width:50%;"></div>
+                    <div class="progress" style="width:80%;"></div>
                 </div>
             </li>
             <li>
                 <h3>jQuery</h3>
                 <div class="progressBar">
-                    <div class="progress" style="width:60%;"></div>
+                    <div class="progress" style="width:70%;"></div>
                 </div>
             </li>
             <li>
@@ -151,38 +142,49 @@
                 </div>
             </li>
             <li>
-                <h3>React</h3>
+                <h3>移动端</h3>
                 <div class="progressBar">
-                    <div class="progress" style="width:80%;"></div>
+                    <div class="progress" style="width:60%;"></div>
                 </div>
             </li>
             <li>
                 <h3>HTTP</h3>
                 <div class="progressBar">
-                    <div class="progress" style="width:90%;"> </div>
+                    <div class="progress" style="width:65%;"> </div>
                 </div>
             </li>
         </ol>
     </section>
     <section data-x id="siteWork" class="portfolio">
         <h2>作品集</h2>
-        <div class="works"  id="mySlides" >
-            <div class="big" style="position: relative;">
-                <img class="bigOne" src="./img/works/works1.jpg" alt="work1" style="height:608px; vertical-align: bottom;" >
-                <div class="content" style="position: absolute;bottom:-60px;left:20px;">
-                    <h2 style="margin-bottom:10px;color:white;">Vue.js在线简历编辑器</h2>
-                    <p style="color:#B6D5F1;margin-bottom:20px;text-align:left;">关键字：VUE</p>
-                    <div class="tools" style="display:flex;margin-bottom:10px;">
-                        <div class="tool tool1" style="border:1px solid #B6D5F1;border-radius:5px; margin-right: 20px;">
+        <div class="nav" style="width:30%;margin: 10px auto 30px;">
+            <ol  style="display:flex;justify-content:space-between;margin-bottom:5px;">
+                <li id="portfolio1">所有</li>
+                <li id="portfolio2">框架&原生JS</li>
+                <li id="portfolio3">CSS</li>
+            </ol>
+            <div id="portfolioBar" class="selectBar state-1" style="height: 5px;background-color: white;border-radius: 2px;">
+                <div class="portfolioBar-inner"  style="height:100%;border-radius:2px;background:#E6686A;"></div>
+            </div>
+        </div>
+
+        <div class="worksAll">
+            <div class="big">
+                <img class="bigOne" src="./img/works/works1.jpg" alt="work1"  >
+                <div class="content">
+                    <h2>Vue.js在线简历编辑器</h2>
+                    <p>关键字：Vue、Vue-router、双向绑定</p>
+                    <div class="tools" >
+                        <div class="tool tool1" >
                             <a href="#" >
-                                <svg class="icon" aria-hidden="true"  style="fill:#E6686A;width:30px;height:30px;padding:5px;">
+                                <svg class="icon" aria-hidden="true">
                                     <use xlink:href="#icon-eye"></use>
                                 </svg>
                             </a>
                         </div>
-                        <div class="tool tool2" style="border:1px solid #B6D5F1;border-radius:5px;">
+                        <div class="tool tool2" >
                             <a href="#">
-                                <svg class="icon" aria-hidden="true" style="fill:#E6686A;width:30px;height:30px;padding:5px;">
+                                <svg class="icon" aria-hidden="true">
                                     <use xlink:href="#icon-link"></use>
                                 </svg>
                             </a>
@@ -194,8 +196,8 @@
                 <div class="smallOne smallOne-1" >
                     <img class="" src="./img/works/works2.jpg" alt="work2" >
                     <div class="content" >
-                        <h5>原生CSS实现皮卡丘</h2>
-                        <h6>关键字：CSS、Animation</h6>
+                        <h5>在线简历</h2>
+                        <h6>原生JS、MVC、Tween</h6>
                         <div class="tools" >
                             <div class="tool tool1" >
                                 <a href="#" >
@@ -217,8 +219,8 @@
                 <div class="smallOne smallOne-2">
                     <img class="" src= "./img/works/works3.jpg" alt="work3" >
                     <div class="content">
-                        <h5>仿网易云音乐</h5>
-                        <h6>原生JS、MVC</h6>
+                        <h5>仿网易云音乐（含管理页）</h5>
+                        <h6>移动端、jQuery</h6>
                         <div class="tools" >
                             <div class="tool tool1" >
                                 <a href="#" >
@@ -239,9 +241,196 @@
                 </div>
             </div>
         </div>
+        <div class="worksJS">
+            <div class="JSWorkFrame">
+                <div class="content" >
+                    <h4>Vue.js在线简历编辑器</h4>
+                    <h5>关键字：Vue、Vue-router、双向绑定</h5>
+                    <a href=# >预览</a>
+                </div>
+                <div class="image" style="background:transparent url(./img/resumeeditor.jpg) no-repeat center center;"></div>
+            </div>
+            <div class="JSWorkFrame">
+                <div class="content" >
+                    <h4>仿网易云音乐</h4>
+                    <h5>关键字：移动端、jQuery、Leancloud</h5>
+                    <a>预览</a>
+                </div>
+                <div class="image" style="background:transparent url(./img/wyy.png) no-repeat center center;"></div>
+            </div>
+            <div class="JSWorkFrame">
+                <div class="content" >
+                    <h4>Canvas画板</h4>
+                    <h5>关键字：移动端、响应式、Canvas</h5>
+                    <a>预览</a>
+                </div>
+                <div class="image" style="background:transparent url(./img/canvas.jpg) no-repeat center center;"></div>
+            </div>
+            <div class="JSWorkFrame" style="">
+                <div class="content" >
+                    <h4>导航键盘</h4>
+                    <h5>关键字：原生JS</h5>
+                    <a>预览</a>
+                </div>
+                <div class="image" style="background:transparent url(./img/keyboard.jpg) no-repeat center center;"></div>
+                
+            </div>
+            <div class="JSWorkFrame">
+                <div class="content" >
+                    <h4>登录注册页面</h4>
+                    <h5>关键字：AJAX、Cookie</h5>
+                    <a>预览</a>
+                </div>
+                <div class="image" style="background:transparent url(./img/sign-in.jpg) no-repeat center center;"></div>
+            </div>
+            <div class="JSWorkFrame">
+                <div class="content" >
+                    <h4>无缝轮播</h4>
+                    <h5>关键字：状态机</h5>
+                    <a>预览</a>
+                </div>
+                <div class="image" style="background:transparent url(./img/slides.png) no-repeat center center;"></div>
+            </div>
+        </div>
+        <div class="worksCSS" >
+            <div class="CSSworkFrame work1" >
+                <div class="pic">
+                    <a href="https://172678694.github.io/make-a-pikachu/">
+                        <img src="./img/css1.png"  alt="pikachu">   
+                    </a> 
+                </div>
+                <h5>用CSS画一只比卡丘</h5>
+                <h2>PIKACHU</h2>
+                <p class="author" >by DanniYang</p>
+            </div>
+            <div class="CSSworkFrame work2">
+                <div class="pic">
+                    <a href="https://172678694.github.io/make-a-Minion-by-CSS/">
+                        <img src="./img/css2.jpg"  alt="minions">
+                    </a>
+                </div>
+                <h5>用CSS画一只小黄人</h5>
+                <h2>MINIONS</h2>
+                <p class="author" >by DanniYang</p>
+            </div>
 
+        </div>
     </section>
-    <section class="message">
+    <section  data-x id="siteExperience"  class="experience">
+        <h2>工作经历</h2>
+        <div class="works" >
+            <div class="timeline"></div>
+            <div class="work work1">
+                <div class="triangle"></div>
+                <div class="dot"></div>
+                <p class="date">2019年1月-2019年8月</p>
+                <img src="./img/js.jpg" alt="" style="width:200px;margin:0 auto;">
+                <p>Web前端开发</p>
+                <span>自学半年,基本掌握了HTML5，CSS3，JavaScript、Vue、HTTP等，并通过独立完成一系列项目巩固。</span>
+            </div>
+            <div class="work work2">
+                    <div class="triangle"></div>
+                    <div class="dot"></div>
+                    <p class="date">2017年7月-2018年12月</p>
+                    <img src="./img/PM.png" alt="" style="width:75px;margin:0 auto;background:white;">
+                    <p>PHSION（深圳）产品经理</p>
+                    <span>主要职责是和RD沟通给客户提供产品解决方案和产品线上的技术支持...</span>
+            </div>
+            <div class="work work3">
+                    <div class="triangle"></div>
+                    <div class="dot"></div>
+                    <p class="date">2013年7月-2017年6月</p>
+                    <img src="./img/scnu.jpg" alt="" style="width:200px;margin:0 auto;background:white;">
+                    <p>在校生</p>
+                    <span>就读于华南师范大学信息光电子科技学院，学习光电信息科学与工程专业！</span>
+            </div>
+        </div>
+    </section>
+    <section  data-x id="siteContact"  class="contact">
+            <h2 >联系方式</h2>
+            <div class="contactCard">
+                <div>
+                    <div class="piece">
+                            <strong>Email:</strong><span>172678694@qq.com</span>
+                        </div>
+                        <div class="piece">
+                            <strong>Phone:</strong><span>15603002818</span>
+                        </div>
+                        <div class="piece">
+                            <strong>微信：</strong><span>yqy15603002818</span>
+                        </div>
+                        <div class="piece">
+                            <strong>QQ：</strong><span>172678694</span>
+                        </div>
+                </div>
+                <div class="more">
+                    <div>更多联系方式</div>
+                </div>
+                <ul class="list">
+                    <li>
+                        <a href="#">
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-zhihu"></use>
+                            </svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-qq-copy"></use>
+                            </svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-jianshu1"></use>
+                            </svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-weibo2"></use>
+                            </svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-github2"></use>
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+    </section>
+    <section  data-x id="siteOthers"  class="others">
+        <h2>其他</h2>
+        <div class="other">
+            <h4 class="title">兴趣爱好</h4>
+            <div class="content">
+                拼拼图，看电影，听歌，进行户外运动...<br>
+                对新事物、新技术经常有很强的好奇心，会主动去学习，并动手实现一些有趣的小东西。
+            </div>
+        </div>
+        <div class="other">
+            <h4 class="title">期望工作</h4>
+            <div class="content">
+               1.一周工作时间：5-6天<br> 
+               2.能有技术大牛指导工作<br> 
+               3.留有自主学习时间<br> 
+               4.工作氛围友好</div>
+            </div>
+        </div>
+        <div class="other">
+            <h4 class="title">自我评价</h4>
+            <div class="content">
+                热爱编程，对新技术有很浓的兴趣，特别是前端方面；性格乐观开朗，喜欢接受新的事物，自学能力强，承压能力强，对工作认真负责，喜欢团队合作，有良好的沟通表达能力。
+            </div>
+        </div>
+    </section>
+    <section data-x id="siteMessage" class="message">
         <h2 >留言</h2>
         <ol id='messageList'>
         </ol>
@@ -260,9 +449,7 @@
     <script src="./js/base/Model.js"></script>
     <script src="./js/base/Controller.js"></script>
     <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://unpkg.com/scrollreveal"></script>
     <!-- 模块化 -->
-    <script src="./js/init-swiper.js"></script>
     <script src="./js/auto-slide-up-and-highlight.js"></script>
     <script src="./js/sticky-topbar.js"></script>
     <script src="./js/smooth-navigation.js"></script>
@@ -287,7 +474,40 @@
         $('.smallOne-2').on('mouseleave',()=>{
             $('.smallOne-2').removeClass('active')
         })
-       
+        $('#portfolio1').click(()=>{
+                $('#portfolioBar').attr('class','selectBar state-1') 
+                $('.worksAll').css('display','flex')
+                $('.worksJS').css('display','none')
+                $('.worksCSS').css('display','none')
+        })
+        $('#portfolio2').click(()=>{
+            $('#portfolioBar').attr('class','selectBar state-2')
+            $('.worksAll').css('display','none')
+            $('.worksJS').css('display','flex')
+            $('.worksCSS').css('display','none')
+        })
+        $('#portfolio3').click(()=>{
+            $('#portfolioBar').attr('class','selectBar state-3')
+            $('.worksAll').css('display','none')
+            $('.worksJS').css('display','none')
+            $('.worksCSS').css('display','flex')
+        })
+        $('.CSSworkFrame').mouseenter(function(e){
+            $(e.currentTarget).addClass('active')
+            $(e.currentTarget).find(img).addClass('active')
+        })
+        $('.CSSworkFrame').mouseleave(function(e){
+            $(e.currentTarget).removeClass('active')
+        })
+        $('.JSWorkFrame').mouseenter(function(e){
+            $(e.currentTarget).addClass('active')
+        })
+        $('.JSWorkFrame').mouseleave(function(e){
+            $(e.currentTarget).removeClass('active')
+        })
+        $('section.others>.other').on('click',(e)=>{
+            $(e.currentTarget).find('.content').toggle()
+        })
     </script>
 </body>
 

@@ -36,7 +36,6 @@
                 words: content,
                 name: name
             }).then(function (object) {
-                console.log(object);
                 let li = document.createElement('li');
                 li.innerText = `${object.attributes.name}:${object.attributes.words}`;
                 messageList.appendChild(li);
